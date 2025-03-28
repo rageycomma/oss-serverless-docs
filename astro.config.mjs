@@ -4,24 +4,31 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://rageycomma.github.io',
+	base: 'oss-serverless-docs',
 	integrations: [
 		starlight({
-			title: 'My Docs',
+			title: 'OSS-Serverless',
 			social: {
-				github: 'https://github.com/withastro/starlight',
+				github: 'https://github.com/rageycomma/oss-serverless-docs',
 			},
 			sidebar: [
 				{
-					label: 'Guides',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
-					],
+					label: 'CLI Commands',
+					autogenerate: { directory: 'all-docs/cli-reference' }
 				},
 				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
+					label: 'AWS Events',
+					autogenerate: { directory: 'all-docs/events/aws' }
 				},
+				{
+					label: 'Guides',
+					autogenerate: { directory: 'all-docs/guides'}
+				},
+				{
+					label: 'Plugins',
+					autogenerate: { directory: 'all-docs/plugins'}
+				}
 			],
 		}),
 	],
