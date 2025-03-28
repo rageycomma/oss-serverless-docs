@@ -4,7 +4,7 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://rageycomma.github.io',
+	site: 'https://rageycomma.github.com',
 	base: 'oss-serverless-docs',
 	integrations: [
 		starlight({
